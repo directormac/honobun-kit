@@ -1,0 +1,6 @@
+.svelte-kit/
+vite.config.ts
+svelte.config.js
+postcss.config.js
+tailwind.config.ts
+node_modules

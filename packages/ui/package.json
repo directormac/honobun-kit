@@ -1,0 +1,212 @@
+{
+	"name": "@honobun-kit/ui",
+	"module": "src/index.ts",
+	"type": "module",
+	"main": "src/index.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"svelte": "./src/index.ts"
+		},
+		"./components": {
+			"types": "./src/components/index.ts",
+			"svelte": "./src/components/index.ts"
+		},
+		"./utils": {
+			"types": "./src/utils/index.ts",
+			"import": "./src/utils/index.ts"
+		},
+		"./accordion": {
+			"types": "./src/components/accordion/index.ts",
+			"svelte": "./src/components/accordion/index.ts"
+		},
+		"./alert": {
+			"types": "./src/components/alert/index.ts",
+			"svelte": "./src/components/alert/index.ts"
+		},
+		"./alert-dialog": {
+			"types": "./src/components/alert-dialog/index.ts",
+			"svelte": "./src/components/alert-dialog/index.ts"
+		},
+		"./aspect-ratio": {
+			"types": "./src/components/aspect-ratio/index.ts",
+			"svelte": "./src/components/aspect-ratio/index.ts"
+		},
+		"./avatar": {
+			"types": "./src/components/avatar/index.ts",
+			"svelte": "./src/components/avatar/index.ts"
+		},
+		"./badge": {
+			"types": "./src/components/badge/index.ts",
+			"svelte": "./src/components/badge/index.ts"
+		},
+		"./breadcrumb": {
+			"types": "./src/components/breadcrumb/index.ts",
+			"svelte": "./src/components/breadcrumb/index.ts"
+		},
+		"./button": {
+			"types": "./src/components/button/index.ts",
+			"svelte": "./src/components/button/index.ts"
+		},
+		"./calendar": {
+			"types": "./src/components/calendar/index.ts",
+			"svelte": "./src/components/calendar/index.ts"
+		},
+		"./card": {
+			"types": "./src/components/calendar/index.ts",
+			"svelte": "./src/components/calendar/index.ts"
+		},
+		"./carousel": {
+			"types": "./src/components/calendar/index.ts",
+			"svelte": "./src/components/calendar/index.ts"
+		},
+		"./checkbox": {
+			"types": "./src/components/checkbox/index.ts",
+			"svelte": "./src/components/checkbox/index.ts"
+		},
+		"./collapsible": {
+			"types": "./src/components/collapsible/index.ts",
+			"svelte": "./src/components/collapsible/index.ts"
+		},
+		"./command": {
+			"types": "./src/components/command/index.ts",
+			"svelte": "./src/components/command/index.ts"
+		},
+		"./context-menu": {
+			"types": "./src/components/context-menu/index.ts",
+			"svelte": "./src/components/context-menu/index.ts"
+		},
+		"./dialog": {
+			"types": "./src/components/dialog/index.ts",
+			"svelte": "./src/components/dialog/index.ts"
+		},
+		"./drawer": {
+			"types": "./src/components/drawer/index.ts",
+			"svelte": "./src/components/drawer/index.ts"
+		},
+		"./dropdown-menu": {
+			"types": "./src/components/dropdown-menu/index.ts",
+			"svelte": "./src/components/dropdown-menu/index.ts"
+		},
+		"./form": {
+			"types": "./src/components/form/index.ts",
+			"svelte": "./src/components/form/index.ts"
+		},
+		"./input": {
+			"types": "./src/components/input/index.ts",
+			"svelte": "./src/components/input/index.ts"
+		},
+		"./label": {
+			"types": "./src/components/label/index.ts",
+			"svelte": "./src/components/label/index.ts"
+		},
+		"./menubar": {
+			"types": "./src/components/menubar/index.ts",
+			"svelte": "./src/components/menubar/index.ts"
+		},
+		"./pagination": {
+			"types": "./src/components/pagination/index.ts",
+			"svelte": "./src/components/pagination/index.ts"
+		},
+		"./progress": {
+			"types": "./src/components/progress/index.ts",
+			"svelte": "./src/components/progress/index.ts"
+		},
+		"./radio-group": {
+			"types": "./src/components/radio-group/index.ts",
+			"svelte": "./src/components/radio-group/index.ts"
+		},
+		"./range-calendar": {
+			"types": "./src/components/range-calendar/index.ts",
+			"svelte": "./src/components/range-calendar/index.ts"
+		},
+		"./resizable": {
+			"types": "./src/components/resizable/index.ts",
+			"svelte": "./src/components/resizable/index.ts"
+		},
+		"./scroll-area": {
+			"types": "./src/components/scroll-area/index.ts",
+			"svelte": "./src/components/scroll-area/index.ts"
+		},
+		"./select": {
+			"types": "./src/components/select/index.ts",
+			"svelte": "./src/components/select/index.ts"
+		},
+		"./separator": {
+			"types": "./src/components/separator/index.ts",
+			"svelte": "./src/components/separator/index.ts"
+		},
+		"./sheet": {
+			"types": "./src/components/sheet/index.ts",
+			"svelte": "./src/components/sheet/index.ts"
+		},
+		"./skeleton": {
+			"types": "./src/components/skeleton/index.ts",
+			"svelte": "./src/components/skeleton/index.ts"
+		},
+		"./slider": {
+			"types": "./src/components/slider/index.ts",
+			"svelte": "./src/components/slider/index.ts"
+		},
+		"./sonner": {
+			"types": "./src/components/sonner/index.ts",
+			"svelte": "./src/components/sonner/index.ts"
+		},
+		"./switch": {
+			"types": "./src/components/switch/index.ts",
+			"svelte": "./src/components/switch/index.ts"
+		},
+		"./table": {
+			"types": "./src/components/table/index.ts",
+			"svelte": "./src/components/table/index.ts"
+		},
+		"./tabs": {
+			"types": "./src/components/tabs/index.ts",
+			"svelte": "./src/components/tabs/index.ts"
+		},
+		"./textarea": {
+			"types": "./src/components/textarea/index.ts",
+			"svelte": "./src/components/textarea/index.ts"
+		},
+		"./toggle": {
+			"types": "./src/components/toggle/index.ts",
+			"svelte": "./src/components/toggle/index.ts"
+		},
+		"./toggle-group": {
+			"types": "./src/components/toggle-group/index.ts",
+			"svelte": "./src/components/toggle-group/index.ts"
+		},
+		"./tooltip": {
+			"types": "./src/components/tooltip/index.ts",
+			"svelte": "./src/components/tooltip/index.ts"
+		}
+	},
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"svelte": "^5.0.0-next.123"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@honobun-kit/eslint": "workspace:*",
+		"@internationalized/date": "^3.5.3",
+		"bits-ui": "^0.21.7",
+		"clsx": "^2.1.1",
+		"cmdk-sv": "^0.0.17",
+		"embla-carousel-svelte": "^8.0.4",
+		"formsnap": "^1.0.0",
+		"lucide-svelte": "^0.378.0",
+		"mode-watcher": "^0.3.0",
+		"paneforge": "^0.0.4",
+		"svelte-sonner": "^0.3.22",
+		"sveltekit-superforms": "^2.13.0",
+		"tailwind-merge": "^2.3.0",
+		"tailwind-variants": "^0.2.1",
+		"vaul-svelte": "^0.3.0",
+		"zod": "^3.23.6"
+	}
+}
