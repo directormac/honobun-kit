@@ -1,0 +1,38 @@
+{
+	"name": "@honobun-kit/ui",
+	"module": "src/index.ts",
+	"type": "module",
+	"main": "src/index.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"svelte": "./src/index.ts"
+		},
+		"./components": {
+			"types": "./src/components/index.ts",
+			"svelte": "./src/components/index.ts"
+		},
+		"./utils": {
+			"types": "./src/utils/index.ts",
+			"import": "./src/utils/index.ts"
+		}
+	},
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"svelte": "^5.0.0-next.123"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@honobun-kit/eslint": "workspace:*",
+		"bits-ui": "^0.21.7",
+		"clsx": "^2.1.1",
+		"lucide-svelte": "^0.378.0",
+		"tailwind-merge": "^2.3.0",
+		"tailwind-variants": "^0.2.1"
+	}
+}

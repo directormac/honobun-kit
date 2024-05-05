@@ -1,0 +1,29 @@
+{
+	"name": "honobun-kit",
+	"author": {
+		"name": "Artifex",
+		"url": "https://mkra.dev",
+		"email": "mac@mkra.dev"
+	},
+	"private": true,
+	"scripts": {
+		"start": "bun run --filter './apps/**' start",
+		"dev": "bun --filter './apps/**' dev",
+		"build": "bun --filter './apps/**' build",
+		"test": "bun --filter './apps/**' test",
+		"clean": "rm -f bun.lockb",
+		"lint": "bun --filter '*' lint",
+		"format": "prettier --write ."
+	},
+	"workspaces": [
+		"packages/*",
+		"apps/*"
+	],
+	"devDependencies": {
+		"@honobun-kit/eslint": "workspace:*",
+		"eslint": "^9.2.0",
+		"prettier": "^3.2.5",
+		"prettier-plugin-svelte": "^3.2.3",
+		"prettier-plugin-tailwindcss": "^0.5.14"
+	}
+}
