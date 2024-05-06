@@ -12,20 +12,28 @@ FROM base as build
 
 # Install necessary system packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3 && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+  apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3 && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
 
-COPY --link bun.lockb package.json ./
+# COPY --link bun.lockb package.json ./
+
+COPY --link . .
+
+# RUN bun run clean
+
 RUN bun install 
 
 RUN bun run build
 
-RUN find . -mindepth 1 ! -regex '^./build\(/.*\)?' -delete
+# RUN find . -mindepth 1 ! -regex '^./build\(/.*\)?' -delete
 
 FROM base
 
+
 COPY --from=build /app /app
+
+RUN ls
 
 EXPOSE 3000
 
