@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { delay } from '@honobun-kit/shared/utils';
-	import { Button } from '@honobun-kit/ui/components';
+	import { Button } from '@honobun-kit/ui/button';
 	import { cn } from '@honobun-kit/ui/utils';
 	import { onMount } from 'svelte';
 
