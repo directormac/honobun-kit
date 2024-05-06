@@ -30,10 +30,8 @@ RUN bun run build
 
 FROM base
 
-
 COPY --from=build /app /app
 
-RUN ls
 
 EXPOSE 3000
 
