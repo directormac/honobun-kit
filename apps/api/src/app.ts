@@ -1,46 +1,25 @@
-import { Hono } from 'hono';
 import { logger } from 'hono/logger';
 import { prettyJSON } from 'hono/pretty-json';
-import api from '@routes/index';
-import { websocket } from '@routes/ws.route';
-import { cors } from 'hono/cors';
+import { hono } from '@honobun-kit/shared/api';
+import ws, { websocket } from '@honobun-kit/shared/ws';
 import { showRoutes } from 'hono/dev';
 import { serveStatic } from 'hono/bun';
 
 export const dev = process.env.NODE_ENV === 'development';
 
-const app = new Hono();
+hono.use('*', prettyJSON());
 
-app.use(
-	'*',
-	cors({
-		origin: [
-			'http://localhost:3000',
-			'http://localhost:5173',
-			'http://localhost:8787'
-		],
-		maxAge: 600,
-		credentials: true
-	})
-);
+hono.use('/api/*', logger());
 
-app.use('*', prettyJSON());
+hono.notFound((c) => c.json({ message: 'Not Found', ok: false }, 404));
 
-app.use('*', logger());
+hono.route('/ws', ws);
 
-app.notFound((c) => c.json({ message: 'Not Found', ok: false }, 404));
+hono.get('*', serveStatic({ root: '../web/build' }));
+hono.get('*', serveStatic({ path: '../web/build/index.html' }));
 
-const routes = app.route('', api);
-
-// app.route('/api', routes);
-
-app.get('*', serveStatic({ root: '../web/build' }));
-app.get('*', serveStatic({ path: '../web/build/index.html' }));
-
-showRoutes(app);
+showRoutes(hono);
 
 export { websocket };
 
-export default app;
-
-export type AppType = typeof routes;
+export default hono;
