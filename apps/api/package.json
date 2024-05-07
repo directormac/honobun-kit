@@ -1,16 +1,18 @@
 {
-	"name": "api",
+	"name": "@honobun-kit/api",
 	"module": "src/index.ts",
 	"type": "module",
 	"scripts": {
+		"build": "bun ./build.ts",
 		"dev": "bun --watch src/index.ts",
 		"test": "bun test --watch",
-		"start": "bun src/index.ts"
+		"start": "bun dist/index.js"
 	},
 	"dependencies": {
 		"hono": "^4.2.9"
 	},
 	"devDependencies": {
+		"@honobun-kit/shared": "workspace:packages/shared",
 		"@types/bun": "latest"
 	},
 	"peerDependencies": {
