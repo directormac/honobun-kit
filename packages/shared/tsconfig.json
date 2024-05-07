@@ -9,7 +9,9 @@
 		"allowJs": true,
 
 		// Bundler mode
-		"moduleResolution": "bundler",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		// "moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"verbatimModuleSyntax": true,
 		"noEmit": true,
@@ -27,7 +29,8 @@
 		"paths": {
 			"@schemas/*": ["./src/schemas/*"],
 			"@types/*": ["./src/types/*"],
-			"@utils/*": ["./src/types/"]
+			"@utils/*": ["./src/utils/*"],
+			"@logger/*": ["./src/logger/*"]
 		}
 	}
 }

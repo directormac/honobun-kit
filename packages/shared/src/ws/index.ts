@@ -9,17 +9,15 @@ route.get(
 	'/',
 	upgradeWebSocket((c) => {
 		let intervalId: ReturnType<typeof setInterval>;
-		const userAgent = c.req.header('User-Agent');
+
 		return {
 			onOpen(_evt, ws) {
-				console.log(`${userAgent} - Connected!`);
 				intervalId = setInterval(() => {
-					ws.send(new Date().toString());
-				}, 500);
+					ws.send(new Date().toISOString());
+				}, 1000);
 			},
 			onClose() {
 				clearInterval(intervalId);
-				console.log(`${userAgent} - Disconnected!`);
 			}
 		};
 	})
