@@ -1,11 +1,11 @@
 {
-	"name": "@honobun-kit/api",
+	"name": "api",
 	"version": "0.0.1",
 	"description": "Hono endpoint",
-	"type": "module",
-	"main": "./src/index.ts",
 	"keywords": [],
 	"author": "Artifex",
+	"main": "./src/app.ts",
+	"type": "module",
 	"exports": {
 		"./app": {
 			"types": "./src/app.ts",
@@ -30,6 +30,7 @@
 		"start": "bun dist/index.js"
 	},
 	"dependencies": {
+		"tsconfig": "workspace:*",
 		"@hono/zod-validator": "^0.2.1",
 		"date-fns": "^3.6.0",
 		"drizzle-kit": "^0.21.2",

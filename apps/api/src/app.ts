@@ -50,7 +50,9 @@ const routes = hono
 
 showRoutes(hono);
 
+type AppType = typeof routes;
+
 export { routes, wsInstance };
-export type { AppBindings };
+export type { AppBindings, AppType };
 
 export default hono;
