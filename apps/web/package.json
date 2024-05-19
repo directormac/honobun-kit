@@ -1,10 +1,11 @@
 {
-	"name": "web",
+	"name": "@honobun-kit/web",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"bundev": "bunx --bun vite dev",
 		"bunbuild": "bunx --bun vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -27,8 +28,8 @@
 		"autoprefixer": "^10.4.16"
 	},
 	"dependencies": {
-		"@honobun-kit/shared": "workspace:*",
-		"@honobun-kit/ui": "workspace:*",
+		"@honobun-kit/shared": "workspace:packages/shared",
+		"@honobun-kit/ui": "workspace:packages/ui",
 		"mode-watcher": "^0.3.0"
 	},
 	"type": "module"
