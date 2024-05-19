@@ -1,12 +1,8 @@
-import { loaderClient } from '$lib/client';
-import { error } from '@sveltejs/kit';
+import { api } from '$lib/client';
 import type { PageLoad } from './$types';
 
-export const load: PageLoad = async ({ fetch }) => {
-	const client = loaderClient({ fetch });
+export const load: PageLoad = async () => {
+	const ok = await api.healthcheck.$get().then((ok) => ok.text());
 
-	const res = await client.api.healthcheck.$get();
-	if (!res.ok) {
-		error(res.status, res.statusText);
-	}
+	console.log(ok);
 };

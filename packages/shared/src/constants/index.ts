@@ -5,3 +5,5 @@ export const ERROR_MESSAGE: ResponseMessage = {
 	message:
 		'Something went wrong. Please try again, if you keep getting this error, contact our support team.'
 };
+
+export const USER_ROLES = ['admin', 'user'] as const;

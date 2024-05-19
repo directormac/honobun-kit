@@ -1,9 +1,9 @@
 import { hc } from 'hono/client';
-import { routes } from '../api';
+import { routes } from '@honobun-kit/api/app';
 
 type AppType = typeof routes;
 
-const client = hc<AppType>('http://localhost:3000');
+const { api } = hc<AppType>('http://localhost:3000');
 
 type GetClientOptions = {
 	fetch?: typeof globalThis.fetch;
@@ -17,10 +17,10 @@ type GetClientOptions = {
  * @param token - JWT token
  */
 function getClient({
-	path = 'http://localhost:3000',
-	fetch = globalThis.fetch
+	fetch = globalThis.fetch,
+	path = 'http://localhost:3000'
 }: GetClientOptions = {}) {
 	return hc<AppType>(path, { fetch });
 }
 
-export { type AppType, client, getClient };
+export { type AppType, api, getClient };

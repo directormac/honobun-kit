@@ -11,10 +11,10 @@
 		// Bundler mode
 		"moduleResolution": "node",
 		"esModuleInterop": true,
-		// "moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"verbatimModuleSyntax": true,
 		"noEmit": true,
+		"composite": false,
 
 		// Best practices
 		"strict": true,

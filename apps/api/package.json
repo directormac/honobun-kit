@@ -1,7 +1,28 @@
 {
 	"name": "@honobun-kit/api",
-	"module": "src/index.ts",
+	"version": "0.0.1",
+	"description": "Hono endpoint",
 	"type": "module",
+	"main": "./src/index.ts",
+	"keywords": [],
+	"author": "Artifex",
+	"exports": {
+		"./app": {
+			"types": "./src/app.ts",
+			"import": "./src/app.ts",
+			"node": "./src/app.ts"
+		},
+		"./schemas": {
+			"types": "./src/schemas/index.ts",
+			"import": "./src/schemas/index.ts",
+			"node": "./src/schemas/index.ts"
+		},
+		"./constants": {
+			"types": "./src/constants/index.ts",
+			"import": "./src/constants/index.ts",
+			"node": "./src/constants/index.ts"
+		}
+	},
 	"scripts": {
 		"build": "bun ./build.ts",
 		"dev": "bun --watch src/index.ts",
@@ -9,10 +30,18 @@
 		"start": "bun dist/index.js"
 	},
 	"dependencies": {
-		"hono": "^4.2.9"
+		"@hono/zod-validator": "^0.2.1",
+		"date-fns": "^3.6.0",
+		"drizzle-kit": "^0.21.2",
+		"drizzle-orm": "^0.30.10",
+		"drizzle-zod": "^0.5.1",
+		"hono": "^4.2.9",
+		"http-status-codes": "^2.3.0",
+		"lucia": "^3.2.0",
+		"oslo": "^1.2.0",
+		"zod": "^3.23.6"
 	},
 	"devDependencies": {
-		"@honobun-kit/shared": "workspace:packages/shared",
 		"@types/bun": "latest"
 	},
 	"peerDependencies": {

@@ -1,6 +1,5 @@
 import { serve } from 'bun';
-import hono, { websocket } from './app';
-import { logger } from '@honobun-kit/shared/logger';
+import hono, { wsInstance as websocket } from './app';
 
 const server = serve({
 	port: process.env.PORT || 3000,
@@ -9,4 +8,4 @@ const server = serve({
 	websocket
 });
 
-logger.info(`Listening on ${server.hostname}:${server.port} 🔥`);
+console.log(`Listening on ${server.hostname}:${server.port} 🔥`);

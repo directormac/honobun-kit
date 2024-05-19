@@ -9,7 +9,8 @@
 		"allowJs": true,
 
 		// Bundler mode
-		"moduleResolution": "bundler",
+		// "moduleResolution": "bundler",
+		"moduleResolution": "node",
 		"allowImportingTsExtensions": true,
 		"verbatimModuleSyntax": true,
 		"noEmit": true,
@@ -18,18 +19,29 @@
 		"strict": true,
 		"skipLibCheck": true,
 		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
 
 		// Some stricter flags (disabled by default)
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"noPropertyAccessFromIndexSignature": false,
+
+		"types": ["bun-types"],
+
+		// Paths
 		"paths": {
 			"@app": ["./src/app.ts"],
+			"@routes": ["./src/routes/index.ts"],
 			"@routes/*": ["./src/routes/*"],
+			"@constants": ["./src/constants/index.ts"],
+			"@constants/*": ["./src/constants/*"],
+			"@schemas": ["./src/schemas/index.ts"],
+			"@schemas/*": ["./src/schemas/*"],
+			"@middlewares": ["./src/middlewares/index.ts"],
 			"@middlewares/*": ["./src/middlewares/*"],
-			"@db/*": ["./src/db/*"],
-			"@queries/*": ["./src/db/queries/*"],
-			"@mutations/*": ["./src/db/mutations/*"]
+			"@db/*": ["./src/db/index.ts", "./src/db/*"],
+			"@queries/*": ["./src/db/queries/index.ts", "./src/db/queries/*"],
+			"@mutations/*": ["./src/db/mutations/index.ts", "./src/db/mutations/*"]
 		}
 	}
 }
