@@ -36,9 +36,6 @@ hono
 						ws.send(`Max Ping reached. Closing connection.`);
 						ws.close(1000, 'No more pings allowed. Closing connection.');
 					}
-				},
-				onClose(ws) {
-					console.log('closed');
 				}
 			};
 		})
