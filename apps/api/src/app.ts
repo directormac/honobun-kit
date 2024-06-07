@@ -2,10 +2,8 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
 import { prettyJSON } from 'hono/pretty-json';
-import { serveStatic } from 'hono/bun';
 import { showRoutes } from 'hono/dev';
-import index, { wsInstance } from './routes';
-import ws from './routes/ws.route';
+import { route } from './routes';
 import users from './routes/user.route';
 import type { Session, User } from 'lucia';
 
@@ -39,20 +37,12 @@ hono.use('/api/*', logger());
 
 hono.notFound((c) => c.json({ message: 'Not Found', ok: false }, 404));
 
-hono.use('*', serveStatic({ root: './public' }));
-hono.use('/assets/*', serveStatic({ root: './public/assets' }));
-
-const routes = hono
-	.basePath('/api')
-	.route('/', index)
-	.route('/ws', ws)
-	.route('/users', users);
+const routes = hono.basePath('/api').route('/', route).route('/users', users);
 
 showRoutes(hono);
 
 type AppType = typeof routes;
 
-export { routes, wsInstance };
 export type { AppBindings, AppType };
 
 export default hono;

@@ -1,5 +1,5 @@
 import { zValidator } from '@hono/zod-validator';
-import { queryParamsSchema } from '@schemas';
+import { queryParamsSchema } from '../schemas';
 import { StatusCodes } from 'http-status-codes';
 
 export const queryParamsValidator = zValidator(

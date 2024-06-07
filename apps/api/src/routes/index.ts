@@ -1,5 +1,4 @@
 import { Hono } from 'hono';
-import { createBunWebSocket } from 'hono/bun';
 import { streamSSE } from 'hono/streaming';
 import { HTTPException } from 'hono/http-exception';
 import type { AppBindings } from '../app';
@@ -40,8 +39,4 @@ const route = new Hono<AppBindings>()
 		});
 	});
 
-const { upgradeWebSocket, websocket } = createBunWebSocket();
-
-export { upgradeWebSocket, websocket as wsInstance };
-
-export default route;
+export { route };

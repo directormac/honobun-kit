@@ -1,5 +1,5 @@
-import { type AppBindings } from '@app';
-import { queryParamsValidator } from '@middlewares';
+import type { AppBindings } from '../app';
+import { queryParamsValidator } from '../middlewares';
 import { Hono } from 'hono';
 
 const route = new Hono<AppBindings>().get(

@@ -1,0 +1,15 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"types": ["@types/bun"],
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"isolatedModules": false,
+		"outDir": "./dist/",
+		"rootDir": "./src"
+	},
+	"include": ["src/**/*.ts"]
+}
