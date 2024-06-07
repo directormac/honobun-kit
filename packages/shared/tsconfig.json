@@ -1,36 +1,4 @@
 {
-	"compilerOptions": {
-		// Enable latest features
-		"lib": ["ESNext", "DOM"],
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleDetection": "force",
-		"jsx": "react-jsx",
-		"allowJs": true,
-
-		// Bundler mode
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"allowImportingTsExtensions": true,
-		"verbatimModuleSyntax": true,
-		"noEmit": true,
-		"composite": false,
-
-		// Best practices
-		"strict": true,
-		"skipLibCheck": true,
-		"noFallthroughCasesInSwitch": true,
-
-		// Some stricter flags (disabled by default)
-		"noUnusedLocals": false,
-		"noUnusedParameters": false,
-		"noPropertyAccessFromIndexSignature": false,
-
-		"paths": {
-			"@schemas/*": ["./src/schemas/*"],
-			"@types/*": ["./src/types/*"],
-			"@utils/*": ["./src/utils/*"],
-			"@logger/*": ["./src/logger/*"]
-		}
-	}
+	"extends": "tsconfig/base.json",
+	"exclude": ["node_modules"]
 }

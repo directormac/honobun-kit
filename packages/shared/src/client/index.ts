@@ -1,7 +1,5 @@
 import { hc } from 'hono/client';
-import { routes } from '@honobun-kit/api/app';
-
-type AppType = typeof routes;
+import type { AppType } from 'api';
 
 const { api } = hc<AppType>('http://localhost:3000');
 

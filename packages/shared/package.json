@@ -1,7 +1,7 @@
 {
-	"name": "@honobun-kit/shared",
+	"name": "shared",
 	"type": "module",
-	"main": "src/index.ts",
+	"main": "./src/index.ts",
 	"version": "0.0.1",
 	"description": "Hono endpoint",
 	"keywords": [],
@@ -12,51 +12,24 @@
 			"import": "./src/index.ts",
 			"node": "./src/index.ts"
 		},
-		"./logger": {
-			"types": "./src/logger/index.ts",
-			"import": "./src/logger/index.ts",
-			"node": "./src/logger/index.ts"
-		},
 		"./client": {
-			"types": "./src/client/index.ts",
 			"import": "./src/client/index.ts",
+			"types": "./src/client/index.ts",
 			"node": "./src/client/index.ts"
-		},
-		"./types": {
-			"types": "./src/types/index.ts",
-			"import": "./src/types/index.ts",
-			"node": "./src/client/index.ts"
-		},
-		"./constants": {
-			"types": "./src/constants/index.ts",
-			"import": "./src/constants/index.ts",
-			"node": "./src/constants/index.ts"
-		},
-		"./schemas": {
-			"types": "./src/schemas/index.ts",
-			"import": "./src/schemas/index.ts",
-			"node": "./src/schemas/index.ts"
-		},
-		"./utils": {
-			"types": "./src/utils/index.ts",
-			"import": "./src/utils/index.ts",
-			"node": "./src/utils/index.ts"
 		}
 	},
 	"scripts": {
 		"lint": "eslint ."
 	},
+	"dependencies": {
+		"api": "workspace:*"
+	},
 	"devDependencies": {
-		"@types/bun": "latest"
+		"@types/bun": "latest",
+		"@honobun-kit/eslint": "workspace:*",
+		"tsconfig": "workspace:*"
 	},
 	"peerDependencies": {
-		"typescript": "^5.0.0"
-	},
-	"dependencies": {
-		"@honobun-kit/eslint": "workspace:*",
-		"@honobun-kit/api": "workspace:*",
-		"hono": "^4.2.9",
-		"pino": "^9.0.0",
-		"pino-pretty": "^11.0.0"
+		"typescript": "^5.4.5"
 	}
 }
