@@ -49,8 +49,8 @@ hono
 					raw.subscribe('pubsub');
 				},
 				onMessage(evt, ws) {
-					const raw = ws.raw as ServerWebSocket;
-					console.log(raw.isSubscribed('pubsub'));
+					// const raw = ws.raw as ServerWebSocket;
+					// console.log(raw.isSubscribed('pubsub'));
 					server.publish('pubsub', `Subscriber ${evt.data}`);
 				}
 			};
