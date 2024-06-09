@@ -1,4 +1,4 @@
-ARG BUN_VERSION=1.1.7
+ARG BUN_VERSION=1.1.8
 FROM oven/bun:${BUN_VERSION} as base
 
 # Set up the working directory
@@ -22,7 +22,7 @@ COPY --link . .
 
 # RUN bun run clean
 
-RUN bun install 
+RUN bun install --verbose
 
 RUN bun run build
 

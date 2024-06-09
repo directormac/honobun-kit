@@ -1,22 +1,30 @@
 import { Hono } from 'hono';
+import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
 import { prettyJSON } from 'hono/pretty-json';
-import api from '@routes/index';
-import { websocket } from '@routes/ws.route';
-import { cors } from 'hono/cors';
 import { showRoutes } from 'hono/dev';
-import { serveStatic } from 'hono/bun';
+import { route } from './routes';
+import users from './routes/user.route';
+import type { Session, User } from 'lucia';
 
 export const dev = process.env.NODE_ENV === 'development';
 
-const app = new Hono();
+type AppBindings = {
+	Variables: {
+		user: User | null;
+		session: Session | null;
+	};
+};
 
-app.use(
+const hono = new Hono();
+
+hono.use(
 	'*',
 	cors({
 		origin: [
 			'http://localhost:3000',
 			'http://localhost:5173',
+			'http://localhost:4173',
 			'http://localhost:8787'
 		],
 		maxAge: 600,
@@ -24,23 +32,18 @@ app.use(
 	})
 );
 
-app.use('*', prettyJSON());
+hono.use('/api/*', prettyJSON());
 
-app.use('*', logger());
+hono.use('/api/*', logger());
 
-app.notFound((c) => c.json({ message: 'Not Found', ok: false }, 404));
+hono.notFound((c) => c.json({ message: 'Not Found', ok: false }, 404));
 
-const routes = app.route('', api);
+const routes = hono.basePath('/api').route('/', route).route('/users', users);
 
-// app.route('/api', routes);
+showRoutes(hono);
 
-app.get('*', serveStatic({ root: '../web/build' }));
-app.get('*', serveStatic({ path: '../web/build/index.html' }));
+type AppType = typeof routes;
 
-showRoutes(app);
+export type { AppBindings, AppType };
 
-export { websocket };
-
-export default app;
-
-export type AppType = typeof routes;
+export default hono;
